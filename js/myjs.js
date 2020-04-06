@@ -28,6 +28,7 @@ var showDebug = false;
 function preload() {
     this.load.image('tiles', 'assets/magecity_1.png');
     this.load.tilemapCSV('map', 'assets/csv_mage.csv');
+    //find sprite and load it
     this.load.spritesheet('player', 'assets/player.png', {
         frameWidth: 16,
         frameHeight: 16
