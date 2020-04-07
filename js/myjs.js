@@ -43,6 +43,7 @@ function preload() {
 }
 
 function create() {
+    //**doc**
     map = game.add.tilemap('map', 16, 16);
     map.addTilesetImage('tiles')
     layer = map.createLayer(0);
