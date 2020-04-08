@@ -27,6 +27,7 @@ var showDebug = false;
 var layer;
 
 function preload() {
+	//add python server into file
     game.load.tilemap('map', '../assets/csv_mage.csv', null, Phaser.Tilemap.CSV);
     this.load.image('tiles', 'assets/magecity_1.png');
     game.load.spritesheet('player', 'assets/zombie-male-base.png', 16, 16);
