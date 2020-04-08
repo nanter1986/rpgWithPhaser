@@ -1,3 +1,4 @@
+console.log("start");
 var config = {
     type: Phaser.AUTO,
     width: 800,
@@ -17,7 +18,11 @@ var config = {
     }
 };
 
+console.log("config:");
+console.log(config);
+
 var game = new Phaser.Game(config);
+console.log("game:" + game);
 var map;
 var cursors;
 var debugGraphics;
@@ -27,19 +32,22 @@ var showDebug = false;
 var layer;
 
 function preload() {
-	//add python server into file
-    game.load.tilemap('map', '../assets/csv_mage.csv', null, Phaser.Tilemap.CSV);
-    this.load.image('tiles', 'assets/magecity_1.png');
-    game.load.spritesheet('player', 'assets/zombie-male-base.png', 16, 16);
+    console.log("preload1");
+    //add python server into file
+    //game.load.tilemap('map', '../assets/csv_mage.csv', null, Phaser.Tilemap.CSV);
+    //this.load.image('tiles', 'assets/magecity_1.png');
+    //game.load.spritesheet('player', 'assets/zombie-male-base.png', 16, 16);
     //find sprite and load it
     //load a map of tiles
     //move a character in it
     //have collission with walls
     //have door to other scene
+    console.log("preload2");
 
 }
 
 function create() {
+    console.log("create1");
     //**doc**
     //map = game.add.tilemap('map', 16, 16);
     //map.addTilesetImage('tiles')
@@ -69,12 +77,14 @@ function create() {
     });
 
     help.fixedToCamera = true;
+    console.log("create2");
 
 
 
 }
 
 function update() {
+    console.log("replace1");
     //game.physics.arcade.collide(player, layer);
     player.body.velocity.set(0)
     //if (cursors.left.isDown) {
@@ -92,11 +102,14 @@ function update() {
     //} else {
     //    player.animations.stop();
     //}
+    console.log("replace2");
 
 }
 
 function render() {
+    console.log("render1");
 
     game.debug.body(player);
 
+    console.log("render2");
 }
