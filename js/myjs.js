@@ -57,7 +57,7 @@ function create() {
     //layer.debug = true;
 
     //  Player
-    player = game.add.sprite(48, 48, 'player', 1);
+    player = this.game.add.sprite(48, 48, 'player', 1);
     //player.animations.add('left', [8, 9], 10, true);
     //player.animations.add('right', [1, 2], 10, true);
     //player.animations.add('up', [11, 12, 13], 10, true);
