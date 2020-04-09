@@ -8,6 +8,13 @@
 <body>
     <script type="text/javascript" src="js/myjs.js">
     </script>
+    <script type="text/javascript">
+        console.log('start');
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+        game.state.add('outside', new Room1(game));
+        game.state.add('inside', new Room(game));
+        game.state.start('inside');
+    </script>
 
 </body>
 
