@@ -6,17 +6,42 @@
 </head>
 
 <body>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+        eruda.init();
+    </script>
     <script type="text/javascript" src="js/myjs.js">
     </script>
     <script type="text/javascript">
         console.log('start');
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+        var scene1 = {
+            key: 'scene1',
+            active: true,
+            preload: preload1,
+            create: create1
+        };
+        var config = {
+            type: Phaser.AUTO,
+            width: 1200,
+            height: 800,
+            scene: scene1
+
+        };
+        var game = new Phaser.Game(config);
         console.log('start1');
         console.log(new Date().toLocaleString());
-        console.log(JSON.stringify(game))
+        //console.log(game);
+	
+	function preload1(){
+		this.load.image("image1","assets/zombie-male-base.png");
 
-        this.game.state.add('inside', new Room(game));
-        this.game.state.start('inside');
+	}
+
+	function create1(){
+		this.add.image(0, 0, 'image1').setOrigin(0);
+
+	}
+
     </script>
 
 </body>
