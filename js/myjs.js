@@ -1,8 +1,9 @@
 function Room(game) {
     console.log("start");
-	this.sprite=null;
+    console.log(JSON.stringify(game));
+    this.sprite = null;
 
-    function preload() {
+    this.preload = function() {
         console.log("preload1");
         //add python server into file
         //game.load.tilemap('map', '../assets/csv_mage.csv', null, Phaser.Tilemap.CSV);
@@ -17,7 +18,7 @@ function Room(game) {
 
     }
 
-    function create() {
+    this.create = function() {
         console.log("create1");
         //**doc**
         //map = game.add.tilemap('map', 16, 16);
@@ -28,7 +29,8 @@ function Room(game) {
         //layer.debug = true;
 
         //  Player
-        this.sprite= game.add.sprite(48, 48, 'player', 1);
+        console.log(JSON.stringify(game));
+        Room.sprite = game.add.sprite(48, 48, 'player', 1);
         //player.animations.add('left', [8, 9], 10, true);
         //player.animations.add('right', [1, 2], 10, true);
         //player.animations.add('up', [11, 12, 13], 10, true);
@@ -54,7 +56,7 @@ function Room(game) {
 
     }
 
-    function update() {
+    this.update = function() {
         console.log("replace1");
         //game.physics.arcade.collide(player, layer);
         player.body.velocity.set(0)
