@@ -34,6 +34,7 @@
 
         function preload1()
         {
+		//add the player ,and animate it
             this.load.spritesheet("image1", "assets/zombie-male-base.png",
             {
                 frameWidth: 32,
@@ -41,6 +42,7 @@
             });
 
         }
+
 
         function create1()
         {
@@ -56,7 +58,7 @@
                 frameRate: 10,
                 repeat: -1
             });
-		this.anims.play("anim",true);
+            this.anims.play("anim", true);
 
         }
     </script>
