@@ -34,6 +34,10 @@ function preload1() {
     console.log("preload1");
     //add the player ,and animate it
     this.load.image("sky", "assets/sky.jpg");
+    this.load.image("2", "assets/2.jpg");
+    this.load.image('1', 'assets/1.png');
+    this.load.image('mage', 'assets/magecity_1.png');
+    this.load.tilemapTiledJSON('map', 'assets/mine.json');
     this.load.spritesheet("image1",
         "assets/zombie-male-base.png", {
             frameWidth: 48,
@@ -45,7 +49,14 @@ function preload1() {
 
 function create1() {
     console.log("create1");
-    this.add.image(600, 400, "sky");
+    map = this.make.tilemap({
+        key: 'map'
+    });
+    var tiles1 = map.addTilesetImage('1', '1');
+    var tiles2 = map.addTilesetImage('2', '2');
+    var tilesMage = map.addTilesetImage('mage', 'mage');
+
+    //this.add.image(600, 400, "sky");
     player = this.physics.add.sprite(200, 200, "image1", 0);
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
