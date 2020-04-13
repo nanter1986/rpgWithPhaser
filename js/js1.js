@@ -52,6 +52,7 @@ function create1() {
     map = this.make.tilemap({
         key: 'map'
     });
+	//try with one map and layer first
     var tiles1 = map.addTilesetImage('1', '1');
     var tiles2 = map.addTilesetImage('2', '2');
     var tilesMage = map.addTilesetImage('mage', 'mage');
