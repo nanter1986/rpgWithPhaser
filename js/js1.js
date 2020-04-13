@@ -34,10 +34,10 @@ function preload1() {
     console.log("preload1");
     //add the player ,and animate it
     this.load.image("sky", "assets/sky.jpg");
-    this.load.image("2", "assets/2.jpg");
+    this.load.image("2", "assets/2.png");
     this.load.image('1', 'assets/1.png');
     this.load.image('mage', 'assets/magecity_1.png');
-    this.load.tilemapTiledJSON('map', 'assets/mine.json');
+    this.load.tilemapTiledJSON('map', 'assets/oneTilemap.json');
     this.load.spritesheet("image1",
         "assets/zombie-male-base.png", {
             frameWidth: 48,
@@ -52,10 +52,14 @@ function create1() {
     map = this.make.tilemap({
         key: 'map'
     });
-	//try with one map and layer first
-    var tiles1 = map.addTilesetImage('1', '1');
+    //try with one map and layer first
+    //var tiles1 = map.addTilesetImage('1', '1');
     var tiles2 = map.addTilesetImage('2', '2');
-    var tilesMage = map.addTilesetImage('mage', 'mage');
+    var layerGround = map.createStaticLayer("Layer 1", tiles2);
+    var layerThings = map.createStaticLayer("things", tiles2)
+	map.setCollision();
+    //var layer = map.createStaticLayer(layerID, tileset, x, y); // x, y : offset in pxiels
+    //var tilesMage = map.addTilesetImage('mage', 'mage');
 
     //this.add.image(600, 400, "sky");
     player = this.physics.add.sprite(200, 200, "image1", 0);
