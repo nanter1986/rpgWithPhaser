@@ -1,3 +1,5 @@
+import VirtualJoystick from './nodemodules/phaser3-rex-plugins/plugins/virtualjoystick-plugin.js';
+
 console.log('start');
 var scene1 = {
     key: 'scene1',
@@ -20,12 +22,23 @@ var config = {
             debug: false
         }
     },
-    scene: scene1
+    scene: scene1,
+    plugins: {
+        global: [{
+                key: 'rexVirtualJoystick',
+                plugin: VirtualJoystickPlugin,
+                start: true
+            },
+            // ...
+        ]
+    }
 
 
 };
 console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
+var joyStick = scene1.plugins.get('rexVirtualJoystick').addPlayer(scene1, config);
+logObject(joyStick);
 console.log('start1');
 console.log(new Date().toLocaleString());
 //console.log(game);
@@ -56,7 +69,7 @@ function create1() {
     //var tiles1 = map.addTilesetImage('1', '1');
     var tiles2 = map.addTilesetImage('2', '2');
     var layerGround = map.createStaticLayer("Layer 1", tiles2);
-    var layerThings = map.createStaticLayer("things", tiles2)
+    var layerThings = map.createStaticLayer("things", tiles2);
     map.setCollision();
     //add controls to check collisiins
     //var layer = map.createStaticLayer(layerID, tileset, x, y); // x, y : offset in pxiels
@@ -66,7 +79,7 @@ function create1() {
     player = this.physics.add.sprite(200, 200, "image1", 0);
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
-    player.body.setGravityY(300)
+    player.body.setGravityY(300);
     logObject(player);
     this.anims.create({
         key: 'left',
