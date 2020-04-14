@@ -57,7 +57,8 @@ function create1() {
     var tiles2 = map.addTilesetImage('2', '2');
     var layerGround = map.createStaticLayer("Layer 1", tiles2);
     var layerThings = map.createStaticLayer("things", tiles2)
-	map.setCollision();
+    map.setCollision();
+    //add controls to check collisiins
     //var layer = map.createStaticLayer(layerID, tileset, x, y); // x, y : offset in pxiels
     //var tilesMage = map.addTilesetImage('mage', 'mage');
 
