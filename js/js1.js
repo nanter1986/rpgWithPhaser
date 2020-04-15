@@ -27,6 +27,7 @@ var config = {
 console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
 console.log('start1');
+var cursors = null;
 console.log(new Date().toLocaleString());
 //console.log(game);
 
@@ -43,7 +44,10 @@ function preload1() {
             frameWidth: 48,
             frameHeight: 48
         });
+    cursors = this.input.keyboard.createCursorKeys();
+    logObject(cursors);
     console.log("preload2");
+
 }
 
 
