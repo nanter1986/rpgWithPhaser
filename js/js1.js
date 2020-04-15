@@ -1,5 +1,3 @@
-import VirtualJoystick from './nodemodules/phaser3-rex-plugins/plugins/virtualjoystick-plugin.js';
-
 console.log('start');
 var scene1 = {
     key: 'scene1',
@@ -22,23 +20,12 @@ var config = {
             debug: false
         }
     },
-    scene: scene1,
-    plugins: {
-        global: [{
-                key: 'rexVirtualJoystick',
-                plugin: VirtualJoystickPlugin,
-                start: true
-            },
-            // ...
-        ]
-    }
+    scene: scene1
 
 
 };
 console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
-var joyStick = scene1.plugins.get('rexVirtualJoystick').addPlayer(scene1, config);
-logObject(joyStick);
 console.log('start1');
 console.log(new Date().toLocaleString());
 //console.log(game);
