@@ -28,6 +28,7 @@ console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
 console.log('start1');
 var cursors = null;
+var gButton;
 console.log(new Date().toLocaleString());
 //console.log(game);
 
@@ -38,6 +39,7 @@ function preload1() {
     this.load.image("2", "assets/2.png");
     this.load.image('1', 'assets/1.png');
     this.load.image('mage', 'assets/magecity_1.png');
+    this.load.image('gButton', 'assets/gButton.png');
     this.load.tilemapTiledJSON('map', 'assets/oneTilemap.json');
     this.load.spritesheet("image1",
         "assets/zombie-male-base.png", {
@@ -73,6 +75,7 @@ function create1() {
     player.setCollideWorldBounds(true);
     player.body.setGravityY(300);
     logObject(player);
+    this.add.sprite(400, 400, "gButton").setScale(0.1);
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('dude', {
@@ -87,6 +90,12 @@ function create1() {
 }
 
 function update1() {
+    if (cursors.left.isDown) {
+        player.setVelocityX(-160);
+        console.log("left is pressed!");
+
+        //player.anims.play('left', true);
+    }
 
 }
 
