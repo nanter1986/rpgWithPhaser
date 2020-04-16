@@ -46,6 +46,7 @@ function preload1() {
         });
     cursors = this.input.keyboard.createCursorKeys();
     logObject(cursors);
+    //make cursors move player
     console.log("preload2");
 
 }
