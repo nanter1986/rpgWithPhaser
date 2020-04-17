@@ -75,7 +75,7 @@ function create1() {
     player.setCollideWorldBounds(true);
     player.body.setGravityY(300);
     logObject(player);
-    this.add.sprite(400, 400, "gButton").setScale(0.1);
+    gButton=this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('dude', {
