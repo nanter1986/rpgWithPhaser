@@ -78,6 +78,7 @@ function create1() {
     gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
     gButton.on('pointerdown', function(pointer, pointerdown) {
 	    console.log("clicked");
+	    //move character here
 
     });
     this.anims.create({
