@@ -15,7 +15,7 @@ var config = {
         default: 'arcade',
         arcade: {
             gravity: {
-                y: 300
+                y: 0
             },
             debug: false
         }
@@ -27,7 +27,7 @@ var config = {
 console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
 console.log('start1');
-var cursors = null;
+var cursors;;
 var gButton;
 console.log(new Date().toLocaleString());
 //console.log(game);
@@ -71,14 +71,14 @@ function create1() {
 
     //this.add.image(600, 400, "sky");
     player = this.physics.add.sprite(200, 200, "image1", 0);
-    player.setBounce(0.2);
+    //player.setBounce(0.2);
     player.setCollideWorldBounds(true);
-    player.body.setGravityY(300);
+    //player.body.setGravityY(300);
     logObject(player);
     gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
     gButton.on('pointerdown', function(pointer, pointerdown) {
         console.log("clicked");
-        player.setVelocityX(-160);
+        player.setVelocityX(160);
         //move character here
 
     });
@@ -96,12 +96,6 @@ function create1() {
 }
 
 function update1() {
-    if (cursors.left.isDown) {
-        player.setVelocityX(-160);
-        console.log("left is pressed!");
-
-        //player.anims.play('left', true);
-    }
 
 }
 
