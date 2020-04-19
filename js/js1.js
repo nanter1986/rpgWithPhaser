@@ -76,10 +76,15 @@ function create1() {
     //player.body.setGravityY(300);
     logObject(player);
     gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
-    gButton.on('pointerdown', function(pointer, pointerdown) {
+    gButton.on('pointerdown', function() {
         console.log("clicked");
         player.setVelocityX(160);
         //move character here
+
+    });
+    gButton.on('pointerup', function() {
+        console.log("released");
+        player.setVelocityX(0);
 
     });
     this.anims.create({
