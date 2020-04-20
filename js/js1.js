@@ -35,12 +35,9 @@ console.log(new Date().toLocaleString());
 function preload1() {
     console.log("preload1");
     //add the player ,and animate it
-    this.load.image("sky", "assets/sky.jpg");
-    this.load.image("2", "assets/2.png");
-    this.load.image('1', 'assets/1.png');
-    this.load.image('mage', 'assets/magecity_1.png');
+    this.load.image("new", "assets/new.png");
     this.load.image('gButton', 'assets/gButton.png');
-    this.load.tilemapTiledJSON('map', 'assets/simpleEx.json');
+    this.load.tilemapCSV('map', 'assets/new.csv');
     this.load.spritesheet("image1",
         "assets/zombie-male-base.png", {
             frameWidth: 48,
@@ -57,14 +54,15 @@ function preload1() {
 function create1() {
     console.log("create1");
     map = this.make.tilemap({
-        key: 'map'
+        key: 'map',
+        tileWidth: 16,
+        tileHeight: 16
     });
     //try with one map and layer first
-    //var tiles1 = map.addTilesetImage('1', '1');
-    var tiles2 = map.addTilesetImage('2', '2');
-    var layerGround = map.createStaticLayer("Layer 1", tiles2);
+    var tiles2 = map.addTilesetImage('new');
+    var layerGround = map.createStaticLayer(0, tiles2, 0, 0);
+    layerGround.setCollision(38);
     logObject(layerGround);
-    layerGround.setCollision(2);
 
     //map.setCollision();
     //add controls to check collisiins
@@ -72,11 +70,13 @@ function create1() {
     //var tilesMage = map.addTilesetImage('mage', 'mage');
 
     //this.add.image(600, 400, "sky");
-    player = this.physics.add.sprite(200, 200, "image1", 0);
-    //player.setBounce(0.2);
+    player = this.physics.add.sprite(0, 0, "image1", 0);
+    player.setScale(0.5);
     player.setCollideWorldBounds(true);
     //player.body.setGravityY(300);
     logObject(player);
+    // This will watch the player and worldLayer every frame to check for collisions
+    this.physics.add.collider(player, layerGround);
     gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
     gButton.on('pointerdown', function() {
         console.log("clicked");
