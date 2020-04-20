@@ -27,7 +27,7 @@ var config = {
 console.log("config:" + JSON.stringify(config));
 var game = new Phaser.Game(config);
 console.log('start1');
-var cursors;;
+var cursors;
 var gButton;
 console.log(new Date().toLocaleString());
 //console.log(game);
@@ -40,7 +40,7 @@ function preload1() {
     this.load.image('1', 'assets/1.png');
     this.load.image('mage', 'assets/magecity_1.png');
     this.load.image('gButton', 'assets/gButton.png');
-    this.load.tilemapTiledJSON('map', 'assets/oneTilemap.json');
+    this.load.tilemapTiledJSON('map', 'assets/simpleEx.json');
     this.load.spritesheet("image1",
         "assets/zombie-male-base.png", {
             frameWidth: 48,
@@ -63,8 +63,10 @@ function create1() {
     //var tiles1 = map.addTilesetImage('1', '1');
     var tiles2 = map.addTilesetImage('2', '2');
     var layerGround = map.createStaticLayer("Layer 1", tiles2);
-    var layerThings = map.createStaticLayer("things", tiles2);
-    map.setCollision();
+    logObject(layerGround);
+    layerGround.setCollision(2);
+
+    //map.setCollision();
     //add controls to check collisiins
     //var layer = map.createStaticLayer(layerID, tileset, x, y); // x, y : offset in pxiels
     //var tilesMage = map.addTilesetImage('mage', 'mage');
