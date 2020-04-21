@@ -64,14 +64,9 @@ function create1() {
     layerGround.setCollision(38);
     logObject(layerGround);
 
-    //map.setCollision();
-    //add controls to check collisiins
-    //var layer = map.createStaticLayer(layerID, tileset, x, y); // x, y : offset in pxiels
-    //var tilesMage = map.addTilesetImage('mage', 'mage');
-
-    //this.add.image(600, 400, "sky");
     player = this.physics.add.sprite(0, 0, "image1", 0);
-    player.setScale(0.5);
+    player.setScale(0.25);
+	//set camera to follow player
     player.setCollideWorldBounds(true);
     //player.body.setGravityY(300);
     logObject(player);
