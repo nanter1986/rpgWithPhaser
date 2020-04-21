@@ -66,12 +66,13 @@ function create1() {
 
     player = this.physics.add.sprite(0, 0, "image1", 0);
     player.setScale(0.25);
-	//set camera to follow player
+    //set camera to follow player
     player.setCollideWorldBounds(true);
     //player.body.setGravityY(300);
     logObject(player);
     // This will watch the player and worldLayer every frame to check for collisions
     this.physics.add.collider(player, layerGround);
+    this.cameras.main.startFollow(player);
     gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
     gButton.on('pointerdown', function() {
         console.log("clicked");
