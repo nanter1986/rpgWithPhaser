@@ -99,7 +99,7 @@ function create1() {
 }
 
 function update1() {
-
+    //make button follow camera here?
 }
 
 function logObject(obj) {
