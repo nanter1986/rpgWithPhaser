@@ -73,7 +73,7 @@ function create1() {
     // This will watch the player and worldLayer every frame to check for collisions
     this.physics.add.collider(player, layerGround);
     this.cameras.main.startFollow(player);
-    gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive();
+    gButton = this.add.sprite(400, 400, "gButton").setScale(0.1).setInteractive().setScrollFactor(0);
     gButton.on('pointerdown', function() {
         console.log("clicked");
         player.setVelocityX(160);
