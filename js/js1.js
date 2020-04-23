@@ -85,15 +85,19 @@ function create1() {
         player.setVelocityX(0);
 
     });
-    this.anims.create({
-        key: 'left',
-        frames: this.anims.generateFrameNumbers('dude', {
+    //set camera to stop at world bounds
+    //make and test animation for player
+    var standAnim = this.anims.create({
+        key: 'stand',
+        frames: this.anims.generateFrameNumbers('image1', {
             start: 0,
-            end: 3
+            end: 2
         }),
         frameRate: 10,
         repeat: -1
     });
+    player.play('stand');
+    logObject(standAnim);
     console.log("create2");
 
 }
