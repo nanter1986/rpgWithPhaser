@@ -98,13 +98,13 @@ function create1() {
     });
     player.play('stand');
     logObject(standAnim);
+    //door to new scene
+    //scene inheritence or composition
     console.log("create2");
 
 }
 
-function update1() {
-    //make button follow camera here?
-}
+function update1() {}
 
 function logObject(obj) {
     console.log("My log:" + JSON.stringify(obj));
