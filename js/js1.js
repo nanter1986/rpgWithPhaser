@@ -85,6 +85,7 @@ function create1() {
         player.setVelocityX(0);
 
     });
+	//display a door
     //set camera to stop at world bounds
     //make and test animation for player
     var standAnim = this.anims.create({
