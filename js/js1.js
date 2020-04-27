@@ -85,9 +85,10 @@ function create1() {
         player.setVelocityX(0);
 
     });
-	//display a door
+    //display a door
     //set camera to stop at world bounds
-    //make and test animation for player
+    //make and test animation for playe
+    coinLayer.setTileIndexCallback(26, hitCoin, this);
     var standAnim = this.anims.create({
         key: 'stand',
         frames: this.anims.generateFrameNumbers('image1', {
