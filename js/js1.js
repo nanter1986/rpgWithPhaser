@@ -88,7 +88,7 @@ function create1() {
     //display a door
     //set camera to stop at world bounds
     //make and test animation for playe
-    coinLayer.setTileIndexCallback(26, hitCoin, this);
+    layerGround.setTileIndexCallback(37, doSomething, this);
     var standAnim = this.anims.create({
         key: 'stand',
         frames: this.anims.generateFrameNumbers('image1', {
@@ -111,4 +111,8 @@ function update1() {}
 function logObject(obj) {
     console.log("My log:" + JSON.stringify(obj));
 
+}
+
+function doSomething(){
+	console.log("touched 37");
 }
