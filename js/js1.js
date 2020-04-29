@@ -114,5 +114,6 @@ function logObject(obj) {
 }
 
 function doSomething(){
+	//new scene starts here
 	console.log("touched 37");
 }
