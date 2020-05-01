@@ -44,6 +44,7 @@ function preload1() {
             frameHeight: 48
         });
     cursors = this.input.keyboard.createCursorKeys();
+    this.scene.add('scene2',scene2);
     logObject(cursors);
     //make cursors move player
     console.log("preload2");
@@ -113,7 +114,7 @@ function logObject(obj) {
 
 }
 
-function doSomething(){
-	//new scene starts here
-	console.log("touched 37");
+function doSomething() {
+    //new scene starts here
+    console.log("touched 37");
 }
