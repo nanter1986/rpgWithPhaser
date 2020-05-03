@@ -1,12 +1,12 @@
 console.log('start');
-var scene1 = {
+var scene2 = {
     key: 'scene1',
     active: true,
-    preload: preload1,
-    create: create1,
-    update: update1
+    preload: preload2,
+    create: create2,
+    update: update2
 };
-console.log("scene1:" + JSON.stringify(scene1));
+console.log("scene2:" + JSON.stringify(scene2));
 var config = {
     type: Phaser.AUTO,
     width: 1200,
