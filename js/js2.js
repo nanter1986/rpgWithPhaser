@@ -20,7 +20,7 @@ var config = {
             debug: false
         }
     },
-    scene: scene1
+    scene: scene2
 
 
 };
