@@ -25,7 +25,7 @@ var config = {
 
 };
 console.log("config:" + JSON.stringify(config));
-var game = new Phaser.Game(config);
+//var game = new Phaser.Game(config);
 console.log('start1');
 var cursors;
 var gButton;
