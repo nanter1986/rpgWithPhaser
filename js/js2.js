@@ -32,7 +32,7 @@ var gButton;
 console.log(new Date().toLocaleString());
 //console.log(game);
 
-function preload1() {
+function preload2() {
     console.log("preload1");
     //add the player ,and animate it
     this.load.image("new", "assets/new.png");
