@@ -51,7 +51,7 @@ function preload2() {
 }
 
 
-function create1() {
+function create2() {
     console.log("create1");
     map = this.make.tilemap({
         key: 'map',
